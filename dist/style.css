@@ -1,0 +1,81 @@
+.user-name {
+  color: white;
+  display: inline-block;
+  border-right: solid 1px white;
+  padding-right: 10px;
+  vertical-align: middle;
+}
+
+.comment-text {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 48px;
+}
+
+.comment-container {
+  text-align: center;
+  line-height: 48px;
+  height: 48px;
+  border: solid grey 1px;
+}
+
+.comment-image,
+.user-photo {
+  height: 45px;
+  border-radius: 50%;
+}
+
+.remove-board {
+  display: block;
+  margin: auto;
+}
+
+.remove-board:hover {
+  color: red;
+}
+
+.modal-90w {
+  max-width: 70vw;
+}
+
+.sign-in {
+  position: absolute;
+  left: 50vw;
+  top: 19vh;
+  margin-left: -104px;
+  /* -1/2 width */
+  margin-top: -24px;
+  /* -1/2 height */
+}
+
+.sign-in-head {
+  position: absolute;
+  left: 50vw;
+  top: 14vh;
+  margin-left: -187px;
+  /* -1/2 width */
+  margin-top: -33px;
+  /* -1/2 height */
+}
+
+.card-board {
+  padding: 8px;
+  min-width: 250px;
+}
+
+.task-name {
+  text-transform: capitalize;
+}
+
+.task-button {
+  display: none;
+}
+
+.task-name:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.task-name:hover .task-button,
+.task-button:hover {
+  display: inline-block;
+}
