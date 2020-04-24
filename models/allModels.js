@@ -1,6 +1,10 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
 var findOrCreate = require("mongoose-findorcreate");
+
+
+module.exports = {
+
 const taskSchema = new Schema({
   task: {
     type: String,
@@ -60,3 +64,8 @@ userSchema.plugin(findOrCreate);
 mongoose.model("users", userSchema);
 mongoose.model("tasks", taskSchema);
 mongoose.model("boards", boardSchema);
+
+
+}
+
+

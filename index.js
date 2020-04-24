@@ -1,10 +1,11 @@
+require('dotenv').config()
 const express = require("express");
 var session = require("express-session");
 const mongoose = require("mongoose");
 const keys = require("./config/keys");
 const bodyParser = require("body-parser");
-
-
+console.log('process.env.CLIENT_ID',process.env.CLIENT_ID)
+console.log('process.env.CLIENT_SECRET',process.env.CLIENT_SECRET)
 // Mongoose Set-Up
 mongoose.connect(keys.mongoURI, {
   useUnifiedTopology: true,
@@ -14,8 +15,9 @@ mongoose.set("useFindAndModify", false);
 
 
 // *****************************************************************************************
-// require('/models/allModels.js');
+require('/models/allModels.js');
 
+/*
 const { Schema } = mongoose;
 var findOrCreate = require("mongoose-findorcreate");
 const taskSchema = new Schema({
@@ -77,7 +79,7 @@ userSchema.plugin(findOrCreate);
 mongoose.model("users", userSchema);
 mongoose.model("tasks", taskSchema);
 mongoose.model("boards", boardSchema);
-
+*/
 
 // *****************************************************************************************
 const User = mongoose.model("users");
@@ -113,7 +115,7 @@ passport.use(
     {
       clientID: process.env.CLIENT_ID,
       clientSecret: process.env.CLIENT_SECRET,
-      callbackURL: "https://polar-everglades-20683.herokuapp.com/auth/google/callback",
+      callbackURL: "https://266068c7.ngrok.io/auth/google/callback",
     },
     function (accessToken, refreshToken, profile, done) {
       console.log("Profile", profile);
