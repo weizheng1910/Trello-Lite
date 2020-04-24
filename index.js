@@ -7,6 +7,7 @@ const bodyParser = require("body-parser");
 console.log('process.env.CLIENT_ID',process.env.CLIENT_ID)
 console.log('process.env.CLIENT_SECRET',process.env.CLIENT_SECRET)
 // Mongoose Set-Up
+require('./models/allModels.js');
 mongoose.connect(keys.mongoURI, {
   useUnifiedTopology: true,
   useNewUrlParser: true,
@@ -15,10 +16,8 @@ mongoose.set("useFindAndModify", false);
 
 
 // *****************************************************************************************
-const { Schema } = mongoose;
-var findOrCreate = require("mongoose-findorcreate");
 
- require('./models/allModels.js');
+
 
 /*
 const { Schema } = mongoose;

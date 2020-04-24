@@ -3,7 +3,7 @@ const { Schema } = mongoose;
 var findOrCreate = require("mongoose-findorcreate");
 
 
-module.exports = () => {
+
 
 const taskSchema = new Schema({
   task: {
@@ -66,6 +66,6 @@ mongoose.model("tasks", taskSchema);
 mongoose.model("boards", boardSchema);
 
 console.log('Export of allModels Successful')
-}
+
 
   
