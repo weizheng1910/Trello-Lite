@@ -15,7 +15,6 @@ mongoose.set("useFindAndModify", false);
 
 
 // *****************************************************************************************
- const mongoose = require("mongoose");
 const { Schema } = mongoose;
 var findOrCreate = require("mongoose-findorcreate");
 
