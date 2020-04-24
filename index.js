@@ -15,7 +15,7 @@ mongoose.set("useFindAndModify", false);
 
 
 // *****************************************************************************************
-require('/models/allModels.js');
+require('./models/allModels.js');
 
 /*
 const { Schema } = mongoose;
