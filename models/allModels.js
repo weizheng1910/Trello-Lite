@@ -61,9 +61,9 @@ const userSchema = new Schema({
 
 userSchema.plugin(findOrCreate);
 
-mongoose.model("users", userSchema);
-mongoose.model("tasks", taskSchema);
-mongoose.model("boards", boardSchema);
+//mongoose.model("users", userSchema);
+//mongoose.model("tasks", taskSchema);
+//mongoose.model("boards", boardSchema);
 
 console.log('Export of allModels Successful')
 }

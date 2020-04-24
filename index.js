@@ -15,9 +15,9 @@ mongoose.set("useFindAndModify", false);
 
 
 // *****************************************************************************************
-// require('./models/allModels.js');
+ require('./models/allModels.js');
 
-
+/*
 const { Schema } = mongoose;
 var findOrCreate = require("mongoose-findorcreate");
 const taskSchema = new Schema({
@@ -79,12 +79,12 @@ userSchema.plugin(findOrCreate);
 mongoose.model("users", userSchema);
 mongoose.model("tasks", taskSchema);
 mongoose.model("boards", boardSchema);
-
+*/
 
 // *****************************************************************************************
 console.log('Passed require')
-
-const User = mongoose.model("users");
+const User = mongoose.model("users", userSchema);
+// const User = mongoose.model("users");
 
 // O-Auth
 var passport = require("passport");
