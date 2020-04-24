@@ -15,6 +15,10 @@ mongoose.set("useFindAndModify", false);
 
 
 // *****************************************************************************************
+ const mongoose = require("mongoose");
+const { Schema } = mongoose;
+var findOrCreate = require("mongoose-findorcreate");
+
  require('./models/allModels.js');
 
 /*
@@ -83,8 +87,8 @@ mongoose.model("boards", boardSchema);
 
 // *****************************************************************************************
 console.log('Passed require')
-const User = mongoose.model("users", userSchema);
-// const User = mongoose.model("users");
+// const User = mongoose.model("users", userSchema);
+ const User = mongoose.model("users");
 
 // O-Auth
 var passport = require("passport");
