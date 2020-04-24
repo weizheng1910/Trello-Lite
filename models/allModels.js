@@ -3,7 +3,7 @@ const { Schema } = mongoose;
 var findOrCreate = require("mongoose-findorcreate");
 
 
-module.exports = {
+module.exports = () => {
 
 const taskSchema = new Schema({
   task: {
