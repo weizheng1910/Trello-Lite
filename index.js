@@ -1,92 +1,22 @@
 require('dotenv').config()
+
 const express = require("express");
 var session = require("express-session");
 const mongoose = require("mongoose");
 const keys = require("./config/keys");
 const bodyParser = require("body-parser");
-console.log('process.env.CLIENT_ID',process.env.CLIENT_ID)
-console.log('process.env.CLIENT_SECRET',process.env.CLIENT_SECRET)
+
 // Mongoose Set-Up
 require('./models/allModels.js');
+
 mongoose.connect(keys.mongoURI, {
   useUnifiedTopology: true,
   useNewUrlParser: true,
 });
+
 mongoose.set("useFindAndModify", false);
 
-
-// *****************************************************************************************
-
-
-
-/*
-const { Schema } = mongoose;
-var findOrCreate = require("mongoose-findorcreate");
-const taskSchema = new Schema({
-  task: {
-    type: String,
-    required: "Name cannot be blank!",
-    unique: true,
-  },
-  board: {
-    type: String,
-    required: "Name cannot be blank!",
-  },
-  completed: {
-    type: Boolean,
-    default: false,
-  },
-  description: {
-    type: String,
-    default: "",
-  },
-  comments: {
-    type: [
-      {
-        name: String,
-        photo: String,
-        comment: String,
-        date: String,
-      },
-    ],
-    default: [],
-  },
-});
-
-const boardSchema = new Schema({
-  board: {
-    type: String,
-    required: "Board cannot be blank!",
-    unique: true,
-  },
-});
-
-const userSchema = new Schema({
-  googleId: {
-    type: String,
-    required: true,
-  },
-  name: {
-    type: String,
-    required: true,
-  },
-  photo: {
-    type: String,
-    required: true,
-  },
-});
-
-userSchema.plugin(findOrCreate);
-
-mongoose.model("users", userSchema);
-mongoose.model("tasks", taskSchema);
-mongoose.model("boards", boardSchema);
-*/
-
-// *****************************************************************************************
-console.log('Passed require')
-// const User = mongoose.model("users", userSchema);
- const User = mongoose.model("users");
+const User = mongoose.model("users");
 
 // O-Auth
 var passport = require("passport");
@@ -119,7 +49,7 @@ passport.use(
     {
       clientID: process.env.CLIENT_ID,
       clientSecret: process.env.CLIENT_SECRET,
-      callbackURL: "https://polar-everglades-20683.herokuapp.com/auth/google/callback",
+      callbackURL: "https://peaceful-lake-76455.herokuapp.com/auth/google/callback",
     },
     function (accessToken, refreshToken, profile, done) {
       console.log("Profile", profile);

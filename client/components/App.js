@@ -17,10 +17,6 @@ const App = () => {
   );
 };
 
-if (module.hot) {
- module.hot.accept('./AddBoard', function() {
-   console.log('AddBOARD!');
- })
-}
+
 
 export default App;
