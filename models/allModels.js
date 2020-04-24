@@ -65,7 +65,7 @@ mongoose.model("users", userSchema);
 mongoose.model("tasks", taskSchema);
 mongoose.model("boards", boardSchema);
 
-
+console.log('Export of allModels Successful')
 }
 
-
+  
